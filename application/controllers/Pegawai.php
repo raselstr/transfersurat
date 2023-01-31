@@ -54,13 +54,39 @@ class Pegawai extends CI_Controller {
         redirect('pegawai');
     }
  
-    public function ubah($id)
+    public function halaman_edit($id)
     {
-        $where = array('nip'=>$id);
+        $data['content'] = 'pegawai/edit';
         $this->load->model('Pegawai_model','mpegawai');
-        $data['record'] = $this->mpegawai->ganti($where,['nip'=>$id])->result();
-        $this->load->view('page/layout',$data);
+        $data['record'] = $this->mpegawai->ambildata($id);
+        $this->load->view('page/layout', $data);
 
+    }
+
+    public function fungsiedit()
+    {
+        $nip = $this->input->post('nip');
+        $namalengkap = $this->input->post('namalengkap');
+        $tptlahir = $this->input->post('tptlahir');
+        $tgllahir = $this->input->post('tgllahir');
+        $jk = $this->input->post('jk');
+        $alamat = $this->input->post('alamat');
+        $jabatan = $this->input->post('jabatan');
+        $gol = $this->input->post('gol');
+
+        $data = [
+            'namalengkap'=>$namalengkap,
+            'tptlahir'=>$tptlahir,
+            'tgllahir'=>$tgllahir,
+            'jk'=>$jk,
+            'alamat'=>$alamat,
+            'jabatan'=>$jabatan,
+            'gol'=>$gol,
+        ];
+
+        $this->load->model('pegawai','mpegawai');
+        $this->mpegawai->update($id,$data);
+        redirect('pegawai');
     }
 
 }
