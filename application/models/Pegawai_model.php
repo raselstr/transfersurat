@@ -14,5 +14,10 @@
         {
             return $this->db->delete('pegawai',['nip'=>$nip]);
         }
+
+        public function ganti($id)
+        {
+            return $this->db->get_where('pegawai',['nip'=>$id]);
+        }
     }
 ?>

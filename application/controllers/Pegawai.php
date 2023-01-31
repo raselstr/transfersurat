@@ -54,9 +54,13 @@ class Pegawai extends CI_Controller {
         redirect('pegawai');
     }
  
-    public function ubah($nip)
+    public function ubah($id)
     {
-        
+        $where = array('nip'=>$id);
+        $this->load->model('Pegawai_model','mpegawai');
+        $data['record'] = $this->mpegawai->ganti($where,['nip'=>$id])->result();
+        $this->load->view('page/layout',$data);
+
     }
 
 }
