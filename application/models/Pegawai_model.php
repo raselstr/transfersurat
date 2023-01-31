@@ -15,9 +15,17 @@
             return $this->db->delete('pegawai',['nip'=>$nip]);
         }
 
-        public function ganti($id)
+        public function ambildata($id)
         {
-            return $this->db->get_where('pegawai',['nip'=>$id]);
+            $this->db->Where('nip',$id);
+            $query = $this->db->get('pegawai');
+            return $query->row();
+        }
+
+        public function update($id, $data)
+        {
+            $this->db->where('nip', $id);
+            $this->db->update('pegawai', $data);
         }
     }
 ?>

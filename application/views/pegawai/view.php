@@ -27,7 +27,7 @@
       <td><?= $key->alamat ?></td>
       <td><?= $key->jabatan ?></td>
       <td><?= $key->gol ?></td>
-      <td><a href="<?= site_url('pegawai/ubah/'.$key->nip) ?>" class="btn btn-sm btn-warning">Edit</a></td>
+      <td><a href="<?= site_url('pegawai/halaman_edit/'.$key->nip) ?>" class="btn btn-sm btn-warning">Edit</a></td>
       <td><a href="<?= site_url('pegawai/buang/'.$key->nip) ?>" class="btn btn-danger btn-sm">Hapus</a></td>
       
     </tr> 
