@@ -84,8 +84,8 @@ class Pegawai extends CI_Controller {
             'gol'=>$gol,
         ];
 
-        $this->load->model('pegawai','mpegawai');
-        $this->mpegawai->update($id,$data);
+        $this->load->model('pegawai_model','mpegawai');
+        $this->mpegawai->update($nip,$data);
         redirect('pegawai');
     }
 
