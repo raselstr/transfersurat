@@ -27,5 +27,20 @@
             $this->db->where('nip', $id);
             $this->db->update('pegawai', $data);
         }
+
+        public function get_keyword($keyword){
+            $this->db->select('*');
+            $this->db->from('pegawai');
+            $this->db->like('nip',$keyword);
+            $this->db->or_like('namalengkap',$keyword);
+            $this->db->or_like('tptlahir',$keyword);
+            $this->db->or_like('jk',$keyword);
+            $this->db->or_like('alamat',$keyword);
+            $this->db->or_like('jabatan',$keyword);
+            $this->db->or_like('gol',$keyword);
+            return $this->db->get()->result();
+
+
+        }
     }
 ?>

@@ -89,6 +89,16 @@ class Pegawai extends CI_Controller {
         redirect('pegawai');
     }
 
+    public function search(){
+
+        $data['content'] = 'pegawai/view';
+        $keyword = $this->input->post('keyword');
+        $this->load->model('Pegawai_model','mpegawai');
+        $data['record']=$this->mpegawai->get_keyword($keyword);
+
+        $this->load->view('page/layout',$data);
+    }
+
 }
 
 ?>
