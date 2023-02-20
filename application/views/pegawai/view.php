@@ -1,7 +1,7 @@
 <div class="card text-bg-light mb-3">
   <div class="card-header">Data Pegawai</div>
   <div class="card-body">
-  <div class="container text-center">
+  <div class="container-text-center">
   <div class="row">
     <div class="col-2">
       <a href="<?= site_url('pegawai/tambahin') ?>" class="btn btn-sm btn-primary">Tambah Data</a>
@@ -11,14 +11,14 @@
     </div>
     <div class="col">
       <form class="d-flex" role="search">
-        <input class="form-control form-control-sm me-2" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control  me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
   </div>
-
+  
   <div class="table-responsive">
-    <table class="table align-middle table-bordered">
+    <table class="table align-middle">
       <thead>
         <tr>
           <th scope="col">NIP</th>
